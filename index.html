@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pexels API Project</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.4/dist/css/splide.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+
+    <div class="parent">
+      <div class="child">
+        <p>SUPER SALE UP To 40% OFF</p>
+      </div>
+      <div class="child1">
+        <ul class="ullistflex">
+          <li>SHOP</li>
+          <li>COMMUNITY</li>
+        </ul>
+        <img src="./images/plush.png" alt="" />
+        <div class="iconssearch">
+          <img
+            src="https://res.cloudinary.com/dfsppvj1s/image/upload/v1711526122/Link_SVG_z5sm23.png"
+            alt=""
+          />
+          <img
+            src="https://res.cloudinary.com/dfsppvj1s/image/upload/v1711526121/Link_SVG_1_bzlq2f.png"
+            alt=""
+          />
+          <img
+            src="https://res.cloudinary.com/dfsppvj1s/image/upload/v1711526121/Link_SVG_2_sfjii0.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="poster-path">
+        <img class="poster-image" src="./images/Poster.png" />
+        <div class="poster-content">
+          <h1 class="poster-heading">Stock photos</h1>
+          <p class="poster-desc">
+            John Wick is on the run after killing a member of the international
+            assassins' guild, and with a $14 million price tag on his head, he
+            is the target of hit men and women everywhere
+          </p>
+          <button class="poster-button">
+            <img src="./images/play icon.png" />EXPLORE
+          </button>
+        </div>
+      </div>
+      <div class="parent-section">
+        <div class="child-section" id="search-section">
+          <input
+            type="text"
+            class="input-box"
+            id="search-input"
+            placeholder="Enter your search query"
+          />
+          <img
+            class="search-field-icons"
+            id="search-btn"
+            src="./images/search (1).png"
+          />
+          <div id="search-results"></div>
+        </div>
+        <div class="search-results" id="searchResultsSection">
+          <img
+            class="search-movie"
+            src="https://m.media-amazon.com/images/I/61Qe0euJJZL.jpg"
+            alt="avatr"
+          />
+          <div class="recommend-content">
+            <h1 class="recommed-title">Alt</h1>
+            <p class="category">Photographer</p>
+            <button class="poster-button">EXPLORE MORE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="similar-results">
+      <h2 class="similarheading">Similar Results</h2>
+      <div id="similar-results-container" class="image-container"></div>
+    </section>
+
+    <!-- Wishlist Section -->
+    <section id="wishlist">
+      <h2 class="wishlistheading">Wishlist</h2>
+      <ul id="wishlist-items"></ul>
+    </section>
+
+    <!-- Wishlist Section -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.4/dist/js/splide.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
