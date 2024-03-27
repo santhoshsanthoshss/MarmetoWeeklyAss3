@@ -1,0 +1,63 @@
+Define HTML structure:
+- Start HTML document
+  - Head section
+    - Meta tags for charset and viewport
+    - Title element
+    - External font links
+    - Font Awesome icon kit link
+    - External CSS file link
+    - Splide JS library scripts and styles
+  - Body section
+    - Div with class "movie-container"
+      - Div with class "nav" containing a paragraph for "SUPER SALE UP TO 40% OFF"
+      - Div with class "child1"
+        - Unordered list with class "ullistflex" containing two list items for "SHOP" and "COMMUNITY"
+        - Image tag with a logo image
+        - Div with class "iconssearch" containing three image tags for icons
+      - Div with class "home-banner"
+        - Image tag with class "home-banner-img" for a banner image
+        - Div with class "banner-content" containing a heading, paragraph, and a button for "EXPLORE"
+      - Div with class "image-results-section"
+        - Div with class "image-search-section" containing an input box and an image for search icon
+        - Div with class "search-results-section" containing an image and content for search results
+        - H1 element with class "recommended-images-heading" for "Similar Results"
+        - Div with class "recommended-images-section" containing a Splide carousel with id "carousel1"
+        - H1 element with class "filter-images-heading" for "Favorites List"
+        - Div with class "favorite-images-section" containing a Splide carousel with id "carousel2"
+    - Script tag linking to an external JS file
+- End HTML document
+
+
+Define event listener for DOMContentLoaded:
+- Define constants for API key, search input, search button, search results container, similar results container, and wishlist items container
+- Define function fetchSearchResults to fetch search results from Pexels API:
+  - Try to fetch data using the provided API key and query
+  - If response is not OK, throw an error
+  - Parse response data to JSON and return the photos array
+  - Catch and log any errors, then return an empty array
+- Define function createImageCard to create an image card:
+  - Create image element with source set to photo's medium size URL
+  - Create heart button element with appropriate class and content based on whether it's a wishlist item
+  - Create card container element and append image and heart button to it
+  - Add event listener to heart button to toggle wishlist item when clicked
+  - Return card container
+- Define function updateLocalStorage to update wishlist items in local storage:
+  - Convert wishlist items in the container to an array of objects containing image URL and name
+  - Set the wishlist items array in local storage as JSON string
+- Define function loadWishlistFromStorage to load wishlist items from local storage:
+  - Retrieve wishlist items from local storage
+  - If items exist, parse and iterate over them to create and append image cards to wishlist container
+- Define function toggleWishlistItem to toggle wishlist item and update UI:
+  - If wishlist container contains card, remove it, change heart symbol to empty, and move it back to similar results container
+  - Otherwise, add card to wishlist container, change heart symbol to filled
+  - Call updateLocalStorage to update local storage
+- Define function displaySearchResults to display search results:
+  - Determine target container based on isWishlistItem flag
+  - If no results found, display a message in the container
+  - Iterate over each photo in results and create image card, then append it to the container
+  - Call updateLocalStorage to update local storage
+- Add event listener to search button:
+  - When clicked, fetch search results based on input value
+  - If query is not empty, display search results in similar results section
+  - If query is empty, display a message prompting user to enter a search query
+- Call updateLocalStorage to ensure wishlist items are initially stored in local storage
